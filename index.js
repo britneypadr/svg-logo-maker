@@ -29,4 +29,30 @@ async function getUserInput() {
     ];
   
     return inquirer.prompt(questions);
+  }
+  
+  function generateSVG({ text, textColor, shape, shapeColor }) {
+    let shapeInstance;
+    switch (shape) {
+      case 'Triangle':
+        shapeInstance = new Triangle();
+        break;
+      case 'Circle':
+        shapeInstance = new Circle();
+        break;
+      case 'Square':
+        shapeInstance = new Square();
+        break;
+    }
+  
+    shapeInstance.setColor(shapeColor);
+  
+    const svgContent = `
+  <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+    ${shapeInstance.render()}
+    <text x="150" y="125" font-size="60" text-anchor="middle" fill="${textColor}">${text}</text>
+  </svg>`;
+  
+    fs.writeFileSync('logo.svg', svgContent);
+    console.log('Generated logo.svg');
   }  
