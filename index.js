@@ -30,7 +30,7 @@ async function getUserInput() {
   
     return inquirer.prompt(questions);
   }
-  
+
   function generateSVG({ text, textColor, shape, shapeColor }) {
     let shapeInstance;
     switch (shape) {
@@ -55,4 +55,15 @@ async function getUserInput() {
   
     fs.writeFileSync('logo.svg', svgContent);
     console.log('Generated logo.svg');
-  }  
+  }
+
+  async function run() {
+    try {
+      const answers = await getUserInput();
+      generateSVG(answers);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+  
+  run();
