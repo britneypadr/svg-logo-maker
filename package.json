@@ -1,7 +1,7 @@
 {
   "name": "svg-logo-maker",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.mjs",
   "directories": {
     "example": "examples",
     "lib": "lib"
