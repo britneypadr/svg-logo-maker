@@ -42,7 +42,7 @@ This command-line application generates SVG files based on user input for text, 
 
 ## Example SVG
 
-(http://127.0.0.1:5500/logo.svg)
+Example SVG:(http://127.0.0.1:5500/logo.svg)
 
 This is an example of an SVG generated using the SVG logo generator application. Customize the text, colors, and shapes to create your own logos!
 
